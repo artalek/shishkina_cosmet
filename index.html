@@ -1,0 +1,1065 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шишкина Елена — Косметолог-эстетист в Екатеринбурге</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ========================
+       ПЕРЕМЕННЫЕ
+    ======================== */
+    :root {
+      --cream:      #F9F5EF;
+      --parchment:  #F2EBE0;
+      --blush:      #E8D5C4;
+      --sage:       #8A9E8C;
+      --sage-light: #C4D0C5;
+      --sage-dark:  #5E7860;
+      --gold:       #B89A6A;
+      --gold-dark:  #a08558;
+      --charcoal:   #3A3530;
+      --muted:      #7A706A;
+    }
+
+    /* ========================
+       СБРОС И БАЗОВЫЕ СТИЛИ
+    ======================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background-color: var(--cream);
+      color: var(--charcoal);
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.025'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    img { display: block; width: 100%; }
+
+    /* ========================
+       УТИЛИТЫ МАКЕТА
+    ======================== */
+    .container {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ========================
+       ДЕКОРАТИВНЫЙ РАЗДЕЛИТЕЛЬ
+    ======================== */
+    .ornament {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+    .ornament::before,
+    .ornament::after {
+      content: '';
+      flex: 1;
+      max-width: 80px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .ornament span {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1.1rem;
+      white-space: nowrap;
+    }
+
+    /* ========================
+       КНОПКИ
+    ======================== */
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background-color: var(--gold);
+      color: #fff;
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: background-color 0.3s, transform 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-primary:hover { background-color: var(--gold-dark); transform: translateY(-2px); }
+
+    .btn-outline {
+      display: inline-block;
+      padding: 13px 34px;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: background-color 0.3s, color 0.3s;
+    }
+    .btn-outline:hover { background-color: var(--gold); color: #fff; }
+
+    /* ========================
+       ШАПКА
+    ======================== */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 50;
+      background: rgba(249, 245, 239, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(232, 213, 196, 0.6);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 16px 24px;
+      max-width: 1152px;
+      margin: 0 auto;
+    }
+
+    .logo { display: flex; flex-direction: column; line-height: 1.3; }
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+    }
+    .logo-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    /* Навигация десктоп */
+    .main-nav { display: flex; align-items: center; gap: 32px; }
+
+    .nav-link {
+      position: relative;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--charcoal);
+      font-family: 'Jost', sans-serif;
+      font-weight: 400;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -2px; left: 0; right: 100%;
+      height: 1px;
+      background: var(--gold);
+      transition: right 0.3s;
+    }
+    .nav-link:hover::after { right: 0; }
+
+    /* Бургер */
+    .burger {
+      display: none;
+      flex-direction: column;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+    .burger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--charcoal);
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* Мобильное меню */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      gap: 16px;
+      padding: 0 24px 20px;
+      border-top: 1px solid rgba(232,213,196,0.6);
+      background: rgba(249,245,239,0.97);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.4s ease;
+    }
+    .mobile-menu.open { max-height: 300px; opacity: 1; }
+    .mobile-menu .nav-link { padding-top: 16px; }
+
+    /* ========================
+       HERO
+    ======================== */
+    .hero-section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding-top: 80px;
+      background-image:
+        linear-gradient(to right, rgba(249,245,239,0.96) 0%, rgba(249,245,239,0.80) 45%, rgba(249,245,239,0.15) 100%),
+        /* ЗАГЛУШКА — замените URL на ваше фото */
+        url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?auto=format&fit=crop&w=1800&q=80');
+      background-size: cover;
+      background-position: center right;
+    }
+
+    .hero-inner {
+      max-width: 1152px;
+      margin: 0 auto;
+      padding: 96px 24px;
+    }
+
+    .hero-content { max-width: 560px; }
+
+    .hero-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      color: var(--charcoal);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .hero-title em { font-style: italic; color: var(--sage-dark); }
+
+    .hero-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.7;
+      margin-bottom: 40px;
+      max-width: 380px;
+    }
+
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; }
+
+    /* Блок доверия */
+    .trust-block {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: 56px;
+      padding-top: 32px;
+      border-top: 1px solid var(--blush);
+    }
+    .trust-item { text-align: center; }
+    .trust-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.875rem;
+      color: var(--charcoal);
+    }
+    .trust-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+    .trust-divider {
+      width: 1px;
+      height: 40px;
+      background: var(--blush);
+    }
+
+    /* Анимации */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up  { animation: fadeUp 0.9s ease both; }
+    .delay-1  { animation-delay: 0.15s; }
+    .delay-2  { animation-delay: 0.30s; }
+    .delay-3  { animation-delay: 0.50s; }
+    .delay-4  { animation-delay: 0.70s; }
+
+    /* ========================
+       СЕКЦИИ — ОБЩИЕ
+    ======================== */
+    .section { padding: 96px 0; }
+    .section-bg-parchment { background-color: var(--parchment); }
+    .section-bg-cream { background-color: var(--cream); }
+
+    .section-header { text-align: center; margin-bottom: 64px; }
+    .section-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+
+    /* ========================
+       СЕТКА УСЛУГ
+    ======================== */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    /* Карточка услуги */
+    .service-card {
+      background: #fff;
+      border-radius: 2px;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 50px rgba(58,53,48,0.10);
+    }
+
+    /* Плейсхолдер фото */
+    .photo-placeholder {
+      background: linear-gradient(135deg, var(--parchment) 0%, var(--blush) 100%);
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .photo-placeholder-label {
+      font-size: 0.6rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold-dark);
+      font-family: 'Jost', sans-serif;
+    }
+
+    .card-body { padding: 24px; }
+
+    .category-tag {
+      display: inline-block;
+      font-size: 0.6rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: var(--parchment);
+      color: var(--gold);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      font-family: 'Jost', sans-serif;
+    }
+
+    .card-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      line-height: 1.65;
+      margin-bottom: 16px;
+    }
+
+    /* Подкатегории */
+    .sub-list { border-top: 1px solid var(--blush); padding-top: 16px; }
+
+    .sub-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 7px 0;
+      border-bottom: 1px dashed var(--blush);
+      gap: 8px;
+    }
+    .sub-item:last-child { border-bottom: none; }
+    .sub-name  { font-size: 0.82rem; color: var(--charcoal); flex: 1; font-family: 'Jost', sans-serif; }
+    .sub-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.95rem;
+      color: var(--gold);
+      white-space: nowrap;
+    }
+
+    .card-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--sage-dark);
+      transition: color 0.2s;
+    }
+    .card-link:hover { color: var(--gold); }
+
+    /* Карточка консультации */
+    .consult-card {
+      background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%);
+      border-radius: 2px;
+      padding: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    .consult-inner { display: flex; align-items: center; gap: 20px; }
+    .consult-icon {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .consult-tag {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 4px;
+    }
+    .consult-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+    .consult-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.6;
+      max-width: 420px;
+    }
+    .btn-white {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #fff;
+      color: var(--sage-dark);
+      font-family: 'Jost', sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.75rem;
+      transition: background-color 0.3s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .btn-white:hover { background: var(--parchment); }
+
+    /* ========================
+       КОНТАКТЫ
+    ======================== */
+    .contacts-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contacts-col { display: flex; flex-direction: column; gap: 32px; }
+
+    /* Телефон */
+    .phone-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+    .phone-link {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.9rem;
+      color: var(--charcoal);
+      letter-spacing: 0.04em;
+      transition: color 0.2s;
+      display: inline-block;
+    }
+    .phone-link:hover { color: var(--gold); }
+    .phone-hint {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    /* Контактная строка */
+    .contact-row { display: flex; gap: 16px; }
+    .contact-icon {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      background: var(--blush);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-text-label {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+    .contact-text-value {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    /* Соцсети в контактах */
+    .social-list { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.875rem;
+      color: var(--sage-dark);
+      transition: color 0.2s;
+    }
+    .social-link:hover { color: var(--gold); }
+
+    /* Карта */
+    .map-wrap {
+      width: 100%;
+      height: 420px;
+      border-radius: 2px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(58,53,48,0.08);
+    }
+    .map-wrap div, .map-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
+
+    /* ========================
+       ПОДВАЛ
+    ======================== */
+    .site-footer {
+      background: var(--charcoal);
+      color: var(--cream);
+      padding: 64px 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(249,245,239,0.1);
+    }
+
+    .footer-brand-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: var(--cream);
+      margin-bottom: 4px;
+    }
+    .footer-brand-sub {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .footer-brand-desc {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(249,245,239,0.5);
+      line-height: 1.6;
+      max-width: 260px;
+    }
+
+    .footer-col-title {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 20px;
+    }
+
+    .footer-nav { display: flex; flex-direction: column; gap: 12px; }
+    .footer-nav a {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(249,245,239,0.6);
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-nav a:hover { color: var(--cream); }
+
+    .footer-social { display: flex; flex-direction: column; gap: 12px; }
+    .footer-social a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem;
+      color: rgba(249,245,239,0.6);
+      letter-spacing: 0.06em;
+      transition: color 0.2s;
+    }
+    .footer-social a:hover { color: var(--cream); }
+
+    .footer-copy {
+      padding-top: 32px;
+      text-align: center;
+    }
+    .footer-copy p {
+      font-family: 'Jost', sans-serif;
+      font-size: 0.6rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(249,245,239,0.3);
+    }
+
+    /* ========================
+       АДАПТИВНОСТЬ
+    ======================== */
+    @media (max-width: 900px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .contacts-grid { grid-template-columns: 1fr; }
+      .footer-grid   { grid-template-columns: repeat(2, 1fr); }
+      .main-nav, .header-btn { display: none !important; }
+      .burger { display: flex; }
+      .mobile-menu { display: flex; }
+    }
+
+    @media (max-width: 600px) {
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-grid   { grid-template-columns: 1fr; }
+      .hero-title    { font-size: 2.5rem; }
+      .trust-block   { gap: 14px; }
+      .consult-card  { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================================================================
+       ШАПКА
+  ================================================================ -->
+  <header class="site-header">
+    <div class="header-inner">
+
+      <a href="#hero" class="logo">
+        <span class="logo-name">Шишкина Елена</span>
+        <span class="logo-sub">Косметолог-эстетист · Екатеринбург</span>
+      </a>
+
+      <nav class="main-nav">
+        <a href="#services" class="nav-link">Услуги</a>
+        <a href="#contacts" class="nav-link">Контакты</a>
+      </nav>
+
+      <a href="https://dikidi.net/1831093" target="_blank" rel="noopener"
+         class="btn-primary header-btn">Записаться</a>
+
+      <button class="burger" id="burger" aria-label="Меню">
+        <span id="b1"></span>
+        <span id="b2"></span>
+        <span id="b3"></span>
+      </button>
+    </div>
+
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#services" class="nav-link">Услуги</a>
+      <a href="#contacts" class="nav-link">Контакты</a>
+      <a href="https://dikidi.net/1831093" target="_blank" rel="noopener"
+         class="btn-primary" style="text-align:center;margin-top:8px;">Записаться</a>
+    </div>
+  </header>
+
+
+  <!-- ================================================================
+       HERO
+  ================================================================ -->
+  <section id="hero" class="hero-section">
+    <div class="hero-inner">
+      <div class="hero-content">
+
+        <p class="hero-tag fade-up">Профессиональная эстетическая косметология</p>
+
+        <h1 class="hero-title fade-up delay-1">
+          Красота,<br />
+          <em>созданная</em><br />
+          для вас
+        </h1>
+
+        <p class="hero-desc fade-up delay-2">
+          Индивидуальный подход, эффективные методики и результат, который говорит сам за себя.
+          Доверьте свою кожу косметологу-эстетисту в Екатеринбурге.
+        </p>
+
+        <div class="hero-buttons fade-up delay-3">
+          <a href="https://dikidi.net/1831093" target="_blank" rel="noopener"
+             class="btn-primary">Записаться на приём</a>
+          <a href="#services" class="btn-outline">Услуги и цены</a>
+        </div>
+
+        <div class="trust-block fade-up delay-4">
+          <div class="trust-item">
+            <div class="trust-num">2+</div>
+            <div class="trust-label">года опыта</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <div class="trust-num">300+</div>
+            <div class="trust-label">клиентов</div>
+          </div>
+          <div class="trust-divider"></div>
+          <div class="trust-item">
+            <div class="trust-num">20+</div>
+            <div class="trust-label">процедур</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       УСЛУГИ
+  ================================================================ -->
+  <section id="services" class="section section-bg-parchment">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-tag">Что я предлагаю</p>
+        <h2 class="section-title">Процедуры и услуги</h2>
+        <div class="ornament"><span>забота о вашей коже</span></div>
+      </div>
+
+      <div class="services-grid">
+
+        <!-- ЧИСТКА ЛИЦА -->
+        <div class="service-card">
+          <img src="img_cleaning.png" alt="Чистка лица" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Очищение</span>
+            <h3 class="card-title">Чистка лица</h3>
+            <p class="card-desc">Удаляет загрязнения, расширенные поры и комедоны. После процедуры кожа становится чище, ровнее и лучше воспринимает уходовые средства.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Комбинированная</span><span class="sub-price">4 500 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Ультразвуковая</span><span class="sub-price">2 000 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+        <!-- МЕЗОТЕРАПИЯ -->
+        <div class="service-card">
+          <img src="img_meso.png" alt="Мезотерапия" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Увлажнение</span>
+            <h3 class="card-title">Мезотерапия</h3>
+            <p class="card-desc">Насыщает кожу витаминами, пептидами и гиалуроновой кислотой. Результат — глубокое увлажнение, улучшение тонуса и сияния.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Аппаратная (безынъекционная)</span><span class="sub-price">1 500 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Фракционная</span><span class="sub-price">3 500 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+        <!-- ПИЛИНГИ -->
+        <div class="service-card">
+          <img src="img_peeling.png" alt="Пилинги" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Обновление</span>
+            <h3 class="card-title">Всесезонные пилинги</h3>
+            <p class="card-desc">Мягко отшелушивают ороговевший слой, выравнивают тон и работают с пигментацией. Подходят для любого времени года.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Азелаиновый / Миндальный</span><span class="sub-price">1 500 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Пилинг Джеснера</span><span class="sub-price">3 000 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Peach Peel</span><span class="sub-price">3 000 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">BioRepeel</span><span class="sub-price">3 500 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+        <!-- МАССАЖ -->
+        <div class="service-card">
+          <img src="img_massage.png" alt="Массаж лица" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Лифтинг</span>
+            <h3 class="card-title">Массаж лица</h3>
+            <p class="card-desc">Улучшает кровообращение, расслабляет мышцы и прорабатывает лимфоотток. Контуры становятся чётче, кожа — более упругой и отдохнувшей.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Скульптурный</span><span class="sub-price">1 900 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Буккальный</span><span class="sub-price">1 800 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+        <!-- АППАРАТНЫЕ -->
+        <div class="service-card">
+          <img src="img_microcurrent.png" alt="Микротоковая терапия" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Аппаратные</span>
+            <h3 class="card-title">Аппаратные процедуры</h3>
+            <p class="card-desc">Современные технологии для точечного воздействия: улучшают тонус, снимают отёчность и насыщают кожу кислородом без боли и реабилитации.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Микротоковая терапия</span><span class="sub-price">1 500 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+        <!-- МАСКИ И КАРБОКСИТЕРАПИЯ -->
+        <div class="service-card">
+          <img src="img_mask.png" alt="Маски" style="width:100%;height:220px;object-fit:cover;display:block;" />
+          <div class="card-body">
+            <span class="category-tag">Уход</span>
+            <h3 class="card-title">Маски и карбокситерапия</h3>
+            <p class="card-desc">Финальный аккорд большинства процедур. Маски успокаивают и восстанавливают кожный барьер. Карбокситерапия насыщает кислородом и запускает обновление.</p>
+            <div class="sub-list">
+              <div class="sub-item"><span class="sub-name">Альгинатная / уходовая маска</span><span class="sub-price">500 ₽</span></div>
+              <div class="sub-item"><span class="sub-name">Карбокситерапия</span><span class="sub-price">1 500 ₽</span></div>
+            </div>
+            <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="card-link">Записаться →</a>
+          </div>
+        </div>
+
+      </div><!-- /services-grid -->
+
+      <!-- КОНСУЛЬТАЦИЯ -->
+      <div class="consult-card">
+        <div class="consult-inner">
+          <div class="consult-icon">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div>
+            <p class="consult-tag">Бесплатно</p>
+            <h3 class="consult-title">Консультация</h3>
+            <p class="consult-desc">Разберём состояние вашей кожи, подберём домашний уход и составим план процедур.</p>
+          </div>
+        </div>
+        <a href="https://dikidi.net/1831093" target="_blank" rel="noopener" class="btn-white">Записаться</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       КОНТАКТЫ И КАРТА
+  ================================================================ -->
+  <section id="contacts" class="section section-bg-cream">
+    <div class="container">
+
+      <div class="section-header">
+        <p class="section-tag">Приходите</p>
+        <h2 class="section-title">Контакты</h2>
+        <div class="ornament"><span>Екатеринбург</span></div>
+      </div>
+
+      <div class="contacts-grid">
+
+        <!-- Левая колонка -->
+        <div class="contacts-col">
+
+          <!-- Телефон -->
+          <div>
+            <p class="phone-label">Телефон</p>
+            <a href="tel:+79043804404" class="phone-link">+7 (904) 380‑44‑04</a>
+            <p class="phone-hint">Нажмите, чтобы позвонить или скопировать</p>
+          </div>
+
+          <!-- Адрес -->
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89A6A" stroke-width="1.8"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+            </div>
+            <div>
+              <p class="contact-text-label">Адрес</p>
+              <p class="contact-text-value">г. Екатеринбург<br>Проспект Космонавтов, 108/4</p>
+            </div>
+          </div>
+
+          <!-- Часы работы -->
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89A6A" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="contact-text-label">Часы работы</p>
+              <p class="contact-text-value">Ежедневно: 9:00 — 21:00</p>
+            </div>
+          </div>
+
+          <!-- Соцсети -->
+          <div class="contact-row">
+            <div class="contact-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#B89A6A" stroke-width="1.8"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+            </div>
+            <div>
+              <p class="contact-text-label">Мессенджеры и соцсети</p>
+              <div class="social-list">
+                <a href="https://t.me/elena_ekb6" target="_blank" rel="noopener" class="social-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                  Telegram
+                </a>
+                <a href="https://t.me/CosmoKOJA" target="_blank" rel="noopener" class="social-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+                  Telegram-канал
+                </a>
+                <a href="https://vk.com/club230043009" target="_blank" rel="noopener" class="social-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 12h10M12 7v10"/></svg>
+                  ВКонтакте
+                </a>
+                <a href="https://www.instagram.com/shishkina_cosmet?igsh=cGtjZGluenptOHh1&utm_source=qr" target="_blank" rel="noopener" class="social-link">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Яндекс Карта -->
+        <div class="map-wrap">
+          <div style="position:relative;overflow:hidden;width:100%;height:420px;">
+            <a href="https://yandex.ru/maps/54/yekaterinburg/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Екатеринбург</a>
+            <a href="https://yandex.ru/maps/54/yekaterinburg/house/prospekt_kosmonavtov_108_4/YkkYcAZkSEMCQFtsfXVweH5rZw==/?indoorLevel=1&ll=60.614165%2C56.919283&utm_medium=mapframe&utm_source=maps&z=16.51" style="color:#eee;font-size:12px;position:absolute;top:14px;">Проспект Космонавтов, 108/4 — Яндекс Карты</a>
+            <iframe src="https://yandex.ru/map-widget/v1/?indoorLevel=1&ll=60.614165%2C56.919283&mode=search&ol=geo&ouri=ymapsbm1%3A%2F%2Fgeo%3Fdata%3DCgo2NTQxMjE5MjMyEn_QoNC-0YHRgdC40Y8sINCh0LLQtdGA0LTQu9C-0LLRgdC60LDRjyDQvtCx0LvQsNGB0YLRjCwg0JXQutCw0YLQtdGA0LjQvdCx0YPRgNCzLCDQv9GA0L7RgdC_0LXQutGCINCa0L7RgdC80L7QvdCw0LLRgtC-0LIsIDEwOC80IgoN6HRyQhVZrWNC&z=16.51" width="100%" height="420" frameborder="1" allowfullscreen="true" style="position:relative;display:block;"></iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ================================================================
+       ПОДВАЛ
+  ================================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <p class="footer-brand-name">Шишкина Елена</p>
+          <p class="footer-brand-sub">Косметолог-эстетист · Екатеринбург</p>
+          <p class="footer-brand-desc">Профессиональная эстетическая косметология с индивидуальным подходом.</p>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Навигация</p>
+          <nav class="footer-nav">
+            <a href="#services">Услуги</a>
+            <a href="#contacts">Контакты</a>
+          </nav>
+        </div>
+
+        <div>
+          <p class="footer-col-title">Соцсети</p>
+          <div class="footer-social">
+            <a href="https://t.me/elena_ekb6" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+              Telegram
+            </a>
+            <a href="https://t.me/CosmoKOJA" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4 20-7z"/></svg>
+              Telegram-канал
+            </a>
+            <a href="https://vk.com/club230043009" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 12h10M12 7v10"/></svg>
+              ВКонтакте
+            </a>
+            <a href="https://www.instagram.com/shishkina_cosmet?igsh=cGtjZGluenptOHh1&utm_source=qr" target="_blank" rel="noopener">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+              Instagram
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-copy">
+        <p>© 2026 made by AAC. All Rights Reserved.</p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ================================================================
+       JS — мобильное меню
+  ================================================================ -->
+  <script>
+    const burger = document.getElementById('burger');
+    const menu   = document.getElementById('mobile-menu');
+    const b1 = document.getElementById('b1');
+    const b2 = document.getElementById('b2');
+    const b3 = document.getElementById('b3');
+
+    burger.addEventListener('click', () => {
+      const isOpen = menu.classList.toggle('open');
+      b1.style.transform = isOpen ? 'translateY(7px) rotate(45deg)' : '';
+      b2.style.opacity   = isOpen ? '0' : '1';
+      b3.style.transform = isOpen ? 'translateY(-7px) rotate(-45deg)' : '';
+    });
+
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        b1.style.transform = '';
+        b2.style.opacity   = '1';
+        b3.style.transform = '';
+      });
+    });
+  </script>
+
+</body>
+</html>
